@@ -1,0 +1,24 @@
+body {
+	margin-top: 1%;
+	font-family: Verdana;
+}
+
+.header {
+	background-color: #f60;
+	height: 26px;
+}
+
+.header h1 {
+	font-weight: 700;
+	font-size: 13px;
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+}
+
+#ycLogo {
+	border: 1px solid white;
+	vertical-align: middle;
+	display: inline-block;
+	margin: 2px;
+}
