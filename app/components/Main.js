@@ -7,20 +7,11 @@ var Main = React.createClass({
 	puke: function(obj) {
 		return <pre>{JSON.stringify(obj, null, ' ')}</pre>
 	},
-	getInitialState: function() {
-		return {
-			info: 'blah'
-		}
-	},
+	
 	componentDidMount: function() {
 		var that = this;
 		helpers.getHackerData()
-			.then(function(info) {
-				that.setState({
-					info: info.data
-				})
-				console.log(info.data);
-			})
+			
 	},
 	render: function() {
 		return (
@@ -34,7 +25,6 @@ var Main = React.createClass({
 					{this.props.children}
 				<footer>
 					<p>Footer</p>
-					{this.puke(this.state.info)}
 				</footer>
 			</div>
 		);

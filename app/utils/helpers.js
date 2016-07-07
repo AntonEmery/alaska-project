@@ -1,13 +1,18 @@
 var React = require('react');
-var axios = require('axios');
+var Firebase = require('firebase');
+var app = new Firebase('https://hacker-news.firebaseio.com/v0/');
+
 
 function hackerNewsApi() {
-		return axios.get('https://hacker-news.firebaseio.com/v0/');
+	app.child('topstories').on('value', function(snapshot) {
+  topStoryIds = snapshot.val()
+  console.log(snapshot);
+})
 	};
 
 var helpers = {
 	getHackerData: function() {
-		return axios.get('https://hacker-news.firebaseio.com/v0/'); 
+		hackerNewsApi();
 
 		}
 	
