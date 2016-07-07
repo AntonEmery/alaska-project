@@ -1,13 +1,9 @@
-var React = require('React');
+var React = require('react');
 
 var Posts = React.createClass({
 	render: function() {
 		return (
-			<div className="row">
-				<div className="col-md-12">
-					<p>All Posts</p>
-				</div>
-			</div>
+			<p>All Posts</p>
 		);
 	}
 });

@@ -1,24 +1,25 @@
-var React = require('React');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var helpers = require('../utils/helpers');
 
 
 var Main = React.createClass({
+	componentDidMount: function() {
+		helpers.test();
+	},
 	render: function() {
 		return (
 			<div className="container">
-				<div className="row">
-					<div className="col-md-12 header">
-						<a id="ycLogo" href="http://www.ycombinator.com">
-							<img src="https://news.ycombinator.com/y18.gif" />
-						</a>
-						<h1 id="title">Hacker News</h1>
-					</div>
-				</div>
+				<header>
+					<a id="ycLogo" href="http://www.ycombinator.com">
+						<img src="https://news.ycombinator.com/y18.gif" />
+					</a>
+					<h1 id="title">Hacker News</h1>
+				</header>
 					{this.props.children}
-				<div className="row footer">
-					<div className="col-md-12">
-						<p>Footer</p>
-					</div>
-				</div>
+				<footer>
+					<p>Footer</p>
+				</footer>
 			</div>
 		);
 	}
