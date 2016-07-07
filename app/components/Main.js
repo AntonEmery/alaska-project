@@ -20,7 +20,7 @@ var Main = React.createClass({
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 });
 
