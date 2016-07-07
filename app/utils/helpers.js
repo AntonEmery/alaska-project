@@ -1,11 +1,18 @@
 var React = require('react');
-// var axios = require('axios');
+var axios = require('axios');
+
+function hackerNewsApi() {
+		return axios.get('https://hacker-news.firebaseio.com/v0/');
+	};
 
 var helpers = {
-	test: function() {
-		console.log('test');
-	}
-};
+	getHackerData: function() {
+		return axios.get('https://hacker-news.firebaseio.com/v0/'); 
+
+		}
+	
+}
+
 
 
 
