@@ -16,9 +16,6 @@ var Main = React.createClass({
 		var that = this;
 		helpers.getHackerData()
 			.then(function(info) {
-				that.setState({
-					info: info.data
-				})
 				console.log(info.data);
 			})
 	},
@@ -34,7 +31,6 @@ var Main = React.createClass({
 					{this.props.children}
 				<footer>
 					<p>Footer</p>
-					{this.puke(this.state.info)}
 				</footer>
 			</div>
 		);
