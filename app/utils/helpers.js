@@ -4,20 +4,13 @@ var app = new Firebase('https://hacker-news.firebaseio.com/v0/');
 
 
 function hackerNewsApi() {
-	console.log(app.child);
-	app.child('topstories').on('value', function(snapshot) {
-  topStoryIds = snapshot.val()
-  console.log(snapshot);
-})
+		//return axios.get('https://hacker-news.firebaseio.com/v0/');
 	};
 
 var helpers = {
 	getHackerData: function() {
-		hackerNewsApi();
-
-		}
-	
-}
+		return axios.get('https://hacker-news.firebaseio.com/v0/topstories.json'); 
+};
 
 
 
