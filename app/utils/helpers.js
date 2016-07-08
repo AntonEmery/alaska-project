@@ -1,5 +1,7 @@
 var React = require('react');
-var axios = require('axios');
+var Firebase = require('firebase');
+var app = new Firebase('https://hacker-news.firebaseio.com/v0/');
+
 
 function hackerNewsApi() {
 		//return axios.get('https://hacker-news.firebaseio.com/v0/');
@@ -8,10 +10,7 @@ function hackerNewsApi() {
 var helpers = {
 	getHackerData: function() {
 		return axios.get('https://hacker-news.firebaseio.com/v0/topstories.json'); 
-
-		}
-	
-}
+};
 
 
 

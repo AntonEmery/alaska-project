@@ -7,11 +7,7 @@ var Main = React.createClass({
 	puke: function(obj) {
 		return <pre>{JSON.stringify(obj, null, ' ')}</pre>
 	},
-	getInitialState: function() {
-		return {
-			info: 'blah'
-		}
-	},
+	
 	componentDidMount: function() {
 		var that = this;
 		helpers.getHackerData()
