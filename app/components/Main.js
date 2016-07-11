@@ -1,22 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var helpers = require('../utils/helpers');
 
 
 var Main = React.createClass({
-	puke: function(obj) {
-		return <pre>{JSON.stringify(obj, null, ' ')}</pre>
-	},
-	
-	componentDidMount: function() {
-		var that = this;
-		helpers.getHackerData()
-			.then(function(topStory) {
-				for(i=0; i<topStory.length; i++) {
-				console.log(topStory[i].data);
-				}
-			})
-	},
+
 	render: function() {
 		return (
 			<div className="container">
