@@ -1,16 +1,31 @@
 var React = require('react');
-var Firebase = require('firebase');
-var app = new Firebase('https://hacker-news.firebaseio.com/v0/');
+var axios = require('axios');
 
 
-function hackerNewsApi() {
-		//return axios.get('https://hacker-news.firebaseio.com/v0/');
-	};
+
+function getTopStories () {
+	return axios.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+}
+
+function getIndividualStories() {
+	return axios.get('https://hacker-news.firebaseio.com/v0/item/12052086.json');
+}
 
 var helpers = {
 	getHackerData: function() {
-		return axios.get('https://hacker-news.firebaseio.com/v0/topstories.json'); 
+		return axios.get('https://hacker-news.firebaseio.com/v0/topstories.json')
+			.then(function(result) {
+				console.log(result.data);
+				return axios.all(result.data.map(function (topStory) {
+				console.log(topStory);
+				// 	return axios.get('https://hacker-news.firebaseio.com/v0/item/' + topStory + '.json'))
+				// });
+			}));
+		})
+	}
 };
+
+
 
 
 

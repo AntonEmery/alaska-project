@@ -11,9 +11,9 @@ var Main = React.createClass({
 	componentDidMount: function() {
 		var that = this;
 		helpers.getHackerData()
-			.then(function(info) {
-				console.log(info.data);
-			})
+			// .then(function(info) {
+			// 	console.log(info.data);
+			// })
 	},
 	render: function() {
 		return (
