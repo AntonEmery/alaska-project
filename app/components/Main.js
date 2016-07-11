@@ -11,8 +11,10 @@ var Main = React.createClass({
 	componentDidMount: function() {
 		var that = this;
 		helpers.getHackerData()
-			.then(function(info) {
-				console.log(info);
+			.then(function(topStory) {
+				for(i=0; i<topStory.length; i++) {
+				console.log(topStory[i].data);
+				}
 			})
 	},
 	render: function() {
