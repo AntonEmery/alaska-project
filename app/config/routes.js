@@ -4,13 +4,13 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../components/Main');
-var Posts = require('../components/Posts');
+var PostsContainer = require('../containers/PostsContainer');
 var Comments = require('../components/Comments');
 
 var routes = (
 	<Router>
 		<Route path='/' component={Main}>
-			<IndexRoute component={Posts} />
+			<IndexRoute component={PostsContainer} />
 			<Route path='/Comments' component={Comments} />
 		</Route>
 	</Router>

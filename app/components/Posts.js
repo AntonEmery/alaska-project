@@ -1,34 +1,19 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var helpers = require('../utils/helpers');
+var ReactRouter = require('react-router');
 
 
-var Posts = React.createClass({
-		puke: function(obj) {
+function puke(obj) {
 		return <pre>{JSON.stringify(obj, null, ' ')}</pre>
-	},
-	getInitialState: function() {
-		return {
-			loading: true
-		};
-	},
-	componentDidMount: function() {
-		var that = this;
-		helpers.getHackerData()
-			.then(function(topStory) {
-				for(i=0; i<topStory.length; i++) {
-				console.log(topStory[i].data);
-				}
-				that.setState({loading: false});
-			})
-	},
-	render: function() {
+}
+
+function Posts(props) {
+		console.log(props);
 		return (
-		this.state.loading ?
-			<p>Loading</p>
-		: <p>Posts Loaded</p>
+		props.loading ?
+			<p>Loading</p> :
+			<p>Data Loaded</p> 
 		);
 	}
-});
 
 module.exports = Posts;
