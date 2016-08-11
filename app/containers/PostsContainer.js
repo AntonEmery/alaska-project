@@ -1,6 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var helpers = require('../utils/helpers');
 var Posts = require('../components/Posts');
 var jsonp = require('jsonp');
 
