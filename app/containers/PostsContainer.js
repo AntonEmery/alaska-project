@@ -2,6 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var helpers = require('../utils/helpers');
 var Posts = require('../components/Posts');
+var jsonp = require('jsonp');
+
 
 
 var PostsContainer = React.createClass({
@@ -14,21 +16,25 @@ var PostsContainer = React.createClass({
 	},
 	componentDidMount: function() {
 		var that = this;
-		helpers.data()
-			// .then(function(topStory) {
-			// 	var dataArray = []
-			// 	for(i=0; i<topStory.length; i++) {
-			// 	console.log(topStory[i].data);
-			// 	dataArray.push(topStory[i].data);
-			// 	}
-			// 	that.setState({loading: false, posts: dataArray });
-			// })
+		
+			jsonp('https://platform.postano.com/apiproxy/jsonp/accounts/4299/projects/82658/products/13196/posts', null, function (err, data) {
+  		if (err) {
+    console.error(err.message);
+  } else {
+   		var dataArray = [];
+   		for(i=0; i<data.length; i++) {
+   			dataArray.push(data[i]);
+   		}
+   		that.setState({loading: false, posts: dataArray});
+  }
+})
+
+
 	},
 	render: function() {
 		return (
 			<Posts   
 			data={this.state.posts}
-			stuff="Yay"
 			loading={this.state.loading}
 			/>
 		);
