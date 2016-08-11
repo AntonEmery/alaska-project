@@ -8,10 +8,7 @@ var Main = React.createClass({
 		return (
 			<div className="container">
 				<header>
-					<a id="ycLogo" href="http://www.ycombinator.com">
-						<img src="https://news.ycombinator.com/y18.gif" />
-					</a>
-					<h1 id="title">Hacker News</h1>
+					<p>Header here</p>
 				</header>
 					{this.props.children}
 				<footer>

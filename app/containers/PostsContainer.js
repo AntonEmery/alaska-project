@@ -14,15 +14,15 @@ var PostsContainer = React.createClass({
 	},
 	componentDidMount: function() {
 		var that = this;
-		helpers.getHackerData()
-			.then(function(topStory) {
-				var dataArray = []
-				for(i=0; i<topStory.length; i++) {
-				console.log(topStory[i].data);
-				dataArray.push(topStory[i].data);
-				}
-				that.setState({loading: false, posts: dataArray });
-			})
+		helpers.data()
+			// .then(function(topStory) {
+			// 	var dataArray = []
+			// 	for(i=0; i<topStory.length; i++) {
+			// 	console.log(topStory[i].data);
+			// 	dataArray.push(topStory[i].data);
+			// 	}
+			// 	that.setState({loading: false, posts: dataArray });
+			// })
 	},
 	render: function() {
 		return (
