@@ -6,7 +6,6 @@ var jsonp = require('jsonp');
 
 
 var PostsContainer = React.createClass({
-		
 	getInitialState: function() {
 		return {
 			loading: true,
@@ -27,7 +26,7 @@ var PostsContainer = React.createClass({
   	}
 	})
 },
-	render: function() {
+  render: function() {
 		return (
 			<Posts   
 			data={this.state.posts}
