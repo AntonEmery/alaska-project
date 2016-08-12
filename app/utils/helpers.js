@@ -1,15 +1,15 @@
 var React = require('react');
-var axios = require('axios');
 var jsonp = require('jsonp');
 
 
 
  
- 	function getData () {jsonp('https://platform.postano.com/apiproxy/jsonp/accounts/4299/projects/82658/products/13196/posts', null, function (err, data) {
+ function getData () {
+ 	jsonp('https://platform.postano.com/apiproxy/jsonp/accounts/4299/projects/82658/products/13196/posts', null, function (err, data) {
   if (err) {
     console.error(err.message);
   } else {
-   	return (data[0]);
+   	console.log(data[0]);
   }
 });
  };
@@ -25,15 +25,8 @@ function getIndividualStories(storyId) {
 
 var helpers = {
 	data: function() {
-		return getData()
-			.then(function(result) {
-				console.log(result);
-				return;
-				return axios.all(result.data.map(function (topStory) {
-					return getIndividualStories(topStory);
-				}))
-			}
-		)		
+		getData()
+			
 	}
 };
 
