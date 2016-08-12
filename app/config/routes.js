@@ -8,13 +8,14 @@ var Main = require('../components/Main');
 var PostsContainer = require('../containers/PostsContainer');
 var Comments = require('../components/Comments');
 var Posts = require('../components/Posts');
+var IndividualPost = require('../components/IndividualPost.js');
 var PostDetails = require('../components/PostDetails');
 
 var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={PostsContainer} />
-			<Route path='PostDetails:index' component={PostDetails} />
+			<Route path='PostDetails:item' handler={IndividualPost} component={PostDetails} />
 		</Route>
 	</Router>
 )

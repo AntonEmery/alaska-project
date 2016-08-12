@@ -9,10 +9,11 @@ var IndividualPost =  React.createClass({
   render: function(){
     console.log(this.props.post);
     var testData = this.props.post.map(function(item, index) {
+      	console.log(item);
       return (
         <div> 
           <p key={index}>{item.feed_type}</p>
-          <Link to={"PostDetails" + index}>Details</Link>
+          <Link to={"PostDetails" + item}>Details</Link>
         </div>
       )
     });
