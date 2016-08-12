@@ -15,7 +15,7 @@ var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={PostsContainer} />
-			<Route path='PostDetails:item' handler={IndividualPost} component={PostDetails} />
+			<Route path='PostDetails:item' component={PostDetails} />
 		</Route>
 	</Router>
 )

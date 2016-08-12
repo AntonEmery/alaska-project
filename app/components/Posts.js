@@ -4,7 +4,6 @@ var ReactRouter = require('react-router');
 var IndividualPost = require('./IndividualPost.js');
 
 function Posts(props) {
-	console.log(props.params);
   return (
   props.loading ?
     <p>Loading</p> :
