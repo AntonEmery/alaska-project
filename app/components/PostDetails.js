@@ -5,7 +5,7 @@ var PostDetails = React.createClass({
   render:function(){
     console.log(this.props);
     return (
-      <p>Post Details</p>
+      <p>{this.props.params.index}</p>
     )
   }
 });
