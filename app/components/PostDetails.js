@@ -13,6 +13,7 @@ var PostDetails = React.createClass({
     return (
       <div>
       <p>{this.props.params.index}</p>
+      <p>{this.props.apiData[this.state.item].feed_type}</p>
       </div>
     )
   }

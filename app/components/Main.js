@@ -34,7 +34,9 @@ var Main = React.createClass({
         <header>
           <p>Header here</p>
         </header>
-         {React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
+         {this.state.loading ?
+         	<p>Loading...</p> :
+         	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
         <footer>
           <p>Footer</p>
         </footer>
