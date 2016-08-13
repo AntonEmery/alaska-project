@@ -6,19 +6,11 @@ var jsonp = require('jsonp');
 
 
 var PostsContainer = React.createClass({
-  // getInitialState: function() {
-  //   return {
-  //     loading: this.props.status
-  //   };
-  // },
   
   render: function() {
     console.log(this.props.apiData);
     return (
-      <Posts   
-      data={this.props.apiData}
-      //loading={this.props.status}
-      />
+      <Posts data={this.props.apiData} />
     );
   }
 });

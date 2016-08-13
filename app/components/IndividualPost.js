@@ -8,8 +8,6 @@ var Link = ReactRouter.Link;
 
 var IndividualPost =  React.createClass({
   render: function(){
-    var test = this.props;
-    console.log(test);
     var testData = this.props.post.map(function(item, index) {
       return (
         <div> 
