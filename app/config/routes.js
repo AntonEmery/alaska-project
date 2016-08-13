@@ -16,7 +16,7 @@ var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={PostsContainer} />
-			<Route path='PostDetails/:index' component={PostDetails} handler={PostsContainer}  />
+			<Route path='PostDetails/:index' component={PostDetails} />
 		</Route>
 	</Router>
 )
