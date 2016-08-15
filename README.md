@@ -1,6 +1,6 @@
 # Overview
 
-Display Instagram and Twitter posts from an API based around the C&#35iflyalaska hashtag. 
+Display Instagram and Twitter posts from an API based around the *#*iflyalaska hashtag. 
 
 # Technologies Used
 React  
