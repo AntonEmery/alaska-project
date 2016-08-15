@@ -3,9 +3,9 @@
 Display Instagram and Twitter posts from an API based around the C&#35iflyalaska hashtag. 
 
 # Technologies Used
-React
-React-Router
-Webpack
+React  
+React-Router  
+Webpack  
 SASS
 
 # Usage
