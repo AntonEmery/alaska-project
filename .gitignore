@@ -1,3 +1,7 @@
 .DS_Store
 /node_modules
 npm-debug.log
+.sass-cache/
+test.css
+test.css.map
+test.scss

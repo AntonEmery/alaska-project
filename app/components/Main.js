@@ -32,7 +32,7 @@ var Main = React.createClass({
     return (
       <div className="container">
         <header>
-          <p>Header here</p>
+          <p>blah here</p>
         </header>
          {this.state.loading ?
          	<p>Loading...</p> :
