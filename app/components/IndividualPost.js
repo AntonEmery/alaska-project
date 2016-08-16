@@ -6,6 +6,29 @@ var Link = ReactRouter.Link;
 
 var IndividualPost =  React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
+  getInitialState: function() {
+    return {
+      arrayOfSlides: [0, 1, 2]
+    }
+  },
+  advanceArray: function() {
+    var testArray = this.state.arrayOfSlides.slice()
+    var newItem = testArray[testArray.length-1];
+    testArray.push(newItem + 1);
+    testArray.shift();
+    console.log(testArray);
+    if (testArray[testArray.length - 1] > (this.props.data.length -1)) {
+      this.context.router.push({
+        pathname: '/'
+      })
+    } else {
+    this.setState({arrayOfSlides: testArray});
+    }
+  },
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
       return (
@@ -19,17 +42,19 @@ var IndividualPost =  React.createClass({
   },
   render: function(){
     var that = this;
-    var testData = this.props.post.map(function(item, index) {
-      console.log(item);
+    console.log(this.props);
+    var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
         <div className="col-md-4"> 
-          <p key={index}>{item.feed_type}</p>
-          <Link to={"PostDetails/" + index}>Details</Link>
-          {that.renderImage(item)} 
+          <p key={index}>{that.props.data[item].feed_type}</p>
+          {that.renderImage(that.props.data[item])} 
         </div>
       )
     });
-    return <div>{testData}</div>
+    return  <div> 
+          <div>{testData}</div>
+          <button onClick={this.advanceArray}>Advance Array</button>
+          </div>
   }
 });
 

@@ -9,7 +9,6 @@ var Main = require('../components/Main');
 var IntroPage = require('../components/IntroPage');
 var PostsContainer = require('../containers/PostsContainer');
 var Comments = require('../components/Comments');
-var Posts = require('../components/Posts');
 var IndividualPost = require('../components/IndividualPost.js');
 var PostDetails = require('../components/PostDetails');
 
@@ -18,7 +17,6 @@ var routes = (
 		<Route path='/' component={Main}>
 			<IndexRoute component={IntroPage} />
       <Route path="PostsContainer" component={PostsContainer} />
-			<Route path='PostDetails/:index' component={PostDetails} />
 		</Route>
 	</Router>
 )
