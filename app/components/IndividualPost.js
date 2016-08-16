@@ -27,7 +27,6 @@ var IndividualPost =  React.createClass({
           <Link to={"PostDetails/" + index}>Details</Link>
           {that.renderImage(item)} 
         </div>
-
       )
     });
     return <div>{testData}</div>

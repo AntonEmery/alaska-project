@@ -36,6 +36,7 @@ var Main = React.createClass({
           <h3>#iflyalaska</h3>
         </div>
       </div>
+
       <div className="container">
         <div className="row">
          {this.state.loading ?
