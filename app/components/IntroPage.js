@@ -6,11 +6,12 @@ var IntroPage = React.createClass({
     router: React.PropTypes.object.isRequired
   },
   goToPosts: function() {
+    var that = this;
     setTimeout(function() {
-      this.context.router.push({
-        path: '/PostsContainer'
+      that.context.router.push({
+        pathname: '/PostsContainer'
       })
-    }, 1000)
+    }, 3000)
   },
   render: function() {
     return (
