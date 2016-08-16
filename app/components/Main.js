@@ -30,16 +30,19 @@ var Main = React.createClass({
 
   render: function() {
     return (
+      <div>
+      <div className="jumbotron">
+        <div className="container">
+          <h3>#iflyalaska</h3>
+        </div>
+      </div>
       <div className="container">
-        <header>
-          <p>blah here</p>
-        </header>
+        <div className="row">
          {this.state.loading ?
          	<p>Loading...</p> :
          	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
-        <footer>
-          <p>Footer</p>
-        </footer>
+        </div>
+      </div>
       </div>
     );
   }

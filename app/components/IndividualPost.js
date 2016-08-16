@@ -13,7 +13,7 @@ var IndividualPost =  React.createClass({
       )
     } else {
         return (
-          <img src={arrayItem.images[0].url} />
+          <img src={arrayItem.images[0].url} className="img-responsive" />
         )
     }
   },
@@ -22,7 +22,7 @@ var IndividualPost =  React.createClass({
     var testData = this.props.post.map(function(item, index) {
       console.log(item);
       return (
-        <div> 
+        <div className="col-md-4"> 
           <p key={index}>{item.feed_type}</p>
           <Link to={"PostDetails/" + index}>Details</Link>
           {that.renderImage(item)} 
