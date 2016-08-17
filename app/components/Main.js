@@ -31,8 +31,8 @@ var Main = React.createClass({
   render: function() {
     return (
       <div>
-      <div className="jumbotron">
-        <div className="container">
+      <div className="container-fluid">
+        <div className="row">
           <h3>#iflyalaska</h3>
         </div>
       </div>
