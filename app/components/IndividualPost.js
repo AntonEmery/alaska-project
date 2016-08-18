@@ -29,6 +29,15 @@ var IndividualPost =  React.createClass({
     this.setState({arrayOfSlides: testArray});
     }
   },
+  renderIcon: function(arrayItem) {
+    if (!arrayItem.images.length) {
+      return;
+    } else {
+        return (
+          <img src={arrayItem.user.icon} className="img-responsive" />
+        )
+    }
+  },
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
       return (
@@ -45,15 +54,16 @@ var IndividualPost =  React.createClass({
     console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
-        <div className="col-md-4"> 
-          <p key={index}>{that.props.data[item].feed_type}</p>
+        <div className="col-md-3 post-card"> 
           {that.renderImage(that.props.data[item])} 
+          <p key={index}>{that.props.data[item].text}</p>
+          {that.renderIcon(that.props.data[item])}
+          <p>{that.props.data[item].user.screen_name}</p>
         </div>
       )
     });
     return  <div> 
           <div>{testData}</div>
-          <button onClick={this.advanceArray}>Advance Array</button>
           </div>
   }
 });

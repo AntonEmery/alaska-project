@@ -1,7 +1,27 @@
 /* header */
 
-.container-fluid {
+.wrapper {
+  width: 100%;
+}
+
+.header {
   background-color: #4771a3;
   text-align: center;
 }
+
+.card-area {
+  padding-top: 3%;
+  background-color: #f3f3f3;
+}
+
+.post-card {
+  border-radius: 5px;
+  padding-top: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,.35);
+  background-color: white;
+}
+
+
+
+
 

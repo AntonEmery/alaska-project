@@ -31,19 +31,19 @@ var Main = React.createClass({
   render: function() {
     return (
       <div>
-      <div className="container-fluid">
-        <div className="row">
-          <h3>#iflyalaska</h3>
+        <div className="container-fluid header">
+          <div className="row">
+            <h3>#iflyalaska</h3>
+          </div>
         </div>
-      </div>
 
-      <div className="container">
-        <div className="row">
-         {this.state.loading ?
-         	<p>Loading...</p> :
-         	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
+        <div className="container card-area wrapper">
+          <div className="row">
+           {this.state.loading ?
+           	<p>Loading...</p> :
+           	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
+          </div>
         </div>
-      </div>
       </div>
     );
   }

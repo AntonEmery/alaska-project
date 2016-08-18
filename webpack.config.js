@@ -13,6 +13,9 @@ module.exports = {
 		path: __dirname + '/dist',
 		filename: 'index_bundle.js'
 	}, 
+	devServer: {
+		contentBase: './app'
+	},
 	module: {
 		loaders: [
 			{test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
