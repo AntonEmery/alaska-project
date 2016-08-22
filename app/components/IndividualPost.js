@@ -15,7 +15,7 @@ var IndividualPost =  React.createClass({
       arrayOfSlides: [0, 1, 2]
     }
   },
-  advanceArray: function() {
+  advancePost: function() {
     var testArray = this.state.arrayOfSlides.slice()
     var newItem = testArray[testArray.length-1];
     testArray.push(newItem + 1);
@@ -29,8 +29,19 @@ var IndividualPost =  React.createClass({
     this.setState({arrayOfSlides: testArray});
     }
   },
+  doesIconExist: function(iconUrl) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', iconUrl, false);
+    xhr.send();
+
+    if(xhr.status == '404') {
+      return false; 
+    } else {
+        return true;
+    }
+  },
   renderIcon: function(arrayItem) {
-    if (!arrayItem.images.length) {
+    if (!this.doesIconExist(arrayItem.user.icon)) {
       return;
     } else {
         return (
@@ -54,7 +65,7 @@ var IndividualPost =  React.createClass({
     console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
-        <div className="col-md-3 post-card"> 
+        <div className="col-md-3 post-card col-centered"> 
           {that.renderImage(that.props.data[item])} 
           <p key={index}>{that.props.data[item].text}</p>
           {that.renderIcon(that.props.data[item])}
@@ -64,6 +75,7 @@ var IndividualPost =  React.createClass({
     });
     return  <div> 
           <div>{testData}</div>
+          <button onClick={that.advancePost}>Button</button>
           </div>
   }
 });
