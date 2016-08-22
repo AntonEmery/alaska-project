@@ -8,9 +8,7 @@ var hashHistory = ReactRouter.hashHistory;
 var Main = require('../components/Main');
 var IntroPage = require('../components/IntroPage');
 var PostsContainer = require('../containers/PostsContainer');
-var Comments = require('../components/Comments');
 var IndividualPost = require('../components/IndividualPost.js');
-var PostDetails = require('../components/PostDetails');
 
 var routes = (
 	<Router history={hashHistory}>

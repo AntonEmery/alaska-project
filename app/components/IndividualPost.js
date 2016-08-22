@@ -51,9 +51,7 @@ var IndividualPost =  React.createClass({
   },
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
-      return (
-        <p>No image</p>
-      )
+      return;
     } else {
         return (
           <img src={arrayItem.images[0].url} className="img-responsive" />
@@ -67,7 +65,7 @@ var IndividualPost =  React.createClass({
       return (
         <div className="col-md-3 post-card col-centered"> 
           {that.renderImage(that.props.data[item])} 
-          <p key={index}>{that.props.data[item].text}</p>
+          <p dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
           {that.renderIcon(that.props.data[item])}
           <p>{that.props.data[item].user.screen_name}</p>
         </div>

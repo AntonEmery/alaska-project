@@ -1,7 +1,7 @@
 {
-  "name": "react-hackernews-clone",
+  "name": "iFlyAlaska",
   "version": "1.0.0",
-  "description": "Hackernews clone built with React",
+  "description": "app imports twitter and instagram posts with the #iflyalaska tag",
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
@@ -10,15 +10,16 @@
   "author": "Anton Emery",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.6",
+    "graceful-fs": "^4.1.6",
     "jsonp": "^0.2.0",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-router": "^2.6.1"
+    "lodash": "^4.15.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",
-    "babel-loader": "^6.2.4",
+    "babel-loader": "^6.2.5",
     "babel-preset-react": "^6.11.1",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
