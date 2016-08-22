@@ -30,7 +30,16 @@ var IndividualPost =  React.createClass({
     }
   },
   componentDidMount: function() {
-    console.log('component did mount');
+    var that = this;
+    setTimeout(function() {
+      that.advancePost()
+    }, 3000)
+  },
+  componentDidUpdate: function() {
+    var that = this;
+    setTimeout(function() {
+      that.advancePost()
+    }, 3000)
   },
   doesIconExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
@@ -78,7 +87,6 @@ var IndividualPost =  React.createClass({
     });
     return  <div> 
           <div>{testData}</div>
-          <p>{setTimeout(function() {that.advancePost()}, 3000)}</p>
           </div>
   }
 });
