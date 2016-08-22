@@ -7,6 +7,7 @@
 .header {
   background-color: #4771a3;
   text-align: center;
+  height: 150px;
 }
 
 .card-area {
@@ -16,9 +17,20 @@
 
 .post-card {
   border-radius: 5px;
-  padding-top: 5px;
+  padding: 5px;
   box-shadow: 0 0 2px rgba(0,0,0,.35);
   background-color: white;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* inline-block space fix */
+    margin-right:7px;
+    vertical-align: top;
 }
 
 
