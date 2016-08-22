@@ -11,12 +11,12 @@ var IntroPage = React.createClass({
       that.context.router.push({
         pathname: '/PostsContainer'
       })
-    }, 3000)
+    }, 7000)
   },
   render: function() {
     return (
       <div>
-      <p>This is why #iflyalaska</p>
+      <p id="intro-text">This is why #iflyalaska</p>
       <p>{this.goToPosts()}</p>
       </div>
     );
