@@ -29,6 +29,9 @@ var IndividualPost =  React.createClass({
     this.setState({arrayOfSlides: testArray});
     }
   },
+  componentDidMount: function() {
+    console.log('component did mount');
+  },
   doesIconExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
     xhr.open('HEAD', iconUrl, false);
@@ -58,7 +61,9 @@ var IndividualPost =  React.createClass({
         )
     }
   },
+
   render: function(){
+    console.log('rerendering');
     var that = this;
     console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
@@ -73,7 +78,7 @@ var IndividualPost =  React.createClass({
     });
     return  <div> 
           <div>{testData}</div>
-          <button onClick={that.advancePost}>Button</button>
+          <p>{setTimeout(function() {that.advancePost()}, 3000)}</p>
           </div>
   }
 });

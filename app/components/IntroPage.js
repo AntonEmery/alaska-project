@@ -11,7 +11,7 @@ var IntroPage = React.createClass({
       that.context.router.push({
         pathname: '/PostsContainer'
       })
-    }, 7000)
+    }, 5000)
   },
   render: function() {
     return (
