@@ -28,5 +28,6 @@ module.exports = {
 							{from: 'app/css', to: 'css'},
 							{from: 'app/img', to: 'img'}
 						]),
-						HtmlWebpackPluginConfig]
+						HtmlWebpackPluginConfig
+						]
 };

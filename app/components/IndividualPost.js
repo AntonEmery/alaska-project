@@ -36,12 +36,12 @@ var IndividualPost =  React.createClass({
       that.advancePost()
     }, 3000)
   },
-  // called on state change after render
+  //called on state change after render
   componentDidUpdate: function() {
     var that = this;
     setTimeout(function() {
       that.advancePost()
-    }, 3000)
+    }, 1000)
   },
   doesIconExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
@@ -59,7 +59,9 @@ var IndividualPost =  React.createClass({
       return;
     } else {
         return (
-          <img src={arrayItem.user.icon} className="img-responsive" />
+          <div className="avatar">
+            <img src={arrayItem.user.icon} className="img-responsive" />
+          </div>
         )
     }
   },
@@ -79,11 +81,12 @@ var IndividualPost =  React.createClass({
     console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
-        <div className="col-md-3 post-card col-centered"> 
+        <div className="col-md-3 post-card col-centered">
           {that.renderImage(that.props.data[item])} 
-          <p dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
           {that.renderIcon(that.props.data[item])}
-          <p>{that.props.data[item].user.screen_name}</p>
+          <p className="full-name">{that.props.data[item].user.full_name}</p>
+          <p className="user-name">{that.props.data[item].user.screen_name}</p>
+          <p className="post-text" dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
         </div>
       )
     });
