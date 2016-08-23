@@ -6,17 +6,17 @@ var IndexRoute = ReactRouter.IndexRoute;
 var RouteHandler = Router.RouteHandler;
 var hashHistory = ReactRouter.hashHistory;
 var Main = require('../components/Main');
+var IntroPage = require('../components/IntroPage');
+var OutroPage = require('../components/OutroPage')
 var PostsContainer = require('../containers/PostsContainer');
-var Comments = require('../components/Comments');
-var Posts = require('../components/Posts');
 var IndividualPost = require('../components/IndividualPost.js');
-var PostDetails = require('../components/PostDetails');
 
 var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
-			<IndexRoute component={PostsContainer} />
-			<Route path='PostDetails/:index' component={PostDetails} />
+			<IndexRoute component={IntroPage} />
+      <Route path="PostsContainer" component={PostsContainer} />
+      <Route path="OutroPage" component={OutroPage} />
 		</Route>
 	</Router>
 )

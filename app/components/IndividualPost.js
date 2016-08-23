@@ -6,31 +6,93 @@ var Link = ReactRouter.Link;
 
 var IndividualPost =  React.createClass({
 
-  renderImage: function(arrayItem) {
-    if (!arrayItem.images.length) {
-      return (
-        <p>No image</p>
-      )
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
+  getInitialState: function() {
+    return {
+      arrayOfSlides: [0, 1, 2]
+    }
+  },
+  advancePost: function() {
+    var testArray = this.state.arrayOfSlides.slice()
+    var newItem = testArray[testArray.length-1];
+    testArray.push(newItem + 1);
+    testArray.shift();
+    console.log(testArray);
+    if (testArray[testArray.length - 1] > (this.props.data.length -1)) {
+      this.context.router.push({
+        pathname: 'OutroPage'
+      })
+    } else {
+    this.setState({arrayOfSlides: testArray});
+    }
+  },
+  // called after initial render
+  componentDidMount: function() {
+    var that = this;
+    setTimeout(function() {
+      that.advancePost()
+    }, 3000)
+  },
+  //called on state change after render
+  componentDidUpdate: function() {
+    var that = this;
+    setTimeout(function() {
+      that.advancePost()
+    }, 1000)
+  },
+  doesIconExist: function(iconUrl) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', iconUrl, false);
+    xhr.send();
+
+    if(xhr.status == '404') {
+      return false; 
+    } else {
+        return true;
+    }
+  },
+  renderIcon: function(arrayItem) {
+    if (!this.doesIconExist(arrayItem.user.icon)) {
+      return;
     } else {
         return (
-          <img src={arrayItem.images[0].url} />
+          <div className="avatar">
+            <img src={arrayItem.user.icon} className="img-responsive" />
+          </div>
         )
     }
   },
-  render: function(){
-    var that = this;
-    var testData = this.props.post.map(function(item, index) {
-      console.log(item);
-      return (
-        <div> 
-          <p key={index}>{item.feed_type}</p>
-          <Link to={"PostDetails/" + index}>Details</Link>
-          {that.renderImage(item)} 
-        </div>
+  renderImage: function(arrayItem) {
+    if (!arrayItem.images.length) {
+      return;
+    } else {
+        return (
+          <img src={arrayItem.images[0].url} className="img-responsive" />
+        )
+    }
+  },
 
+  render: function(){
+    console.log('rerendering');
+    var that = this;
+    console.log(this.props);
+    var testData = this.state.arrayOfSlides.map(function(item, index) {
+      return (
+        <div className="col-md-3 post-card col-centered">
+          {that.renderImage(that.props.data[item])} 
+          {that.renderIcon(that.props.data[item])}
+          <p className="full-name">{that.props.data[item].user.full_name}</p>
+          <p className="user-name">{that.props.data[item].user.screen_name}</p>
+          <p className="post-text" dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
+        </div>
       )
     });
-    return <div>{testData}</div>
+    return  <div> 
+          <div>{testData}</div>
+          </div>
   }
 });
 

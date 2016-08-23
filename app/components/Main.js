@@ -30,16 +30,20 @@ var Main = React.createClass({
 
   render: function() {
     return (
-      <div className="container">
-        <header>
-          <p>blah here</p>
-        </header>
-         {this.state.loading ?
-         	<p>Loading...</p> :
-         	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
-        <footer>
-          <p>Footer</p>
-        </footer>
+      <div>
+        <div className="container-fluid header">
+          <div className="row">
+            <a href="/"><img src="img/logo.png" className="img-responsive" /></a>
+          </div>
+        </div>
+
+        <div className="container card-area wrapper">
+          <div className="row row-centered">
+           {this.state.loading ?
+           	<p id="loading">Loading...</p> :
+           	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
+          </div>
+        </div>
       </div>
     );
   }
