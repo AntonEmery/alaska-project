@@ -41,7 +41,7 @@ var IndividualPost =  React.createClass({
     var that = this;
     setTimeout(function() {
       that.advancePost()
-    }, 1000)
+    }, 2000)
   },
   doesIconExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
