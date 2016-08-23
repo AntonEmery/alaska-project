@@ -3,7 +3,9 @@
 $font: 'Open Sans', sans-serif;
 $color: red;
 
-
+body {
+  background-color: #f3f3f3;
+}
 
 /* header */
 
@@ -96,6 +98,16 @@ $color: red;
 
 .avatar {
   margin-right: 1%;
+}
+
+@media (max-width: 991px) {
+  .img-responsive {
+    margin: 0 auto;
+  }
+
+  .post-card {
+    margin-bottom: 2%;
+  }
 }
 
 

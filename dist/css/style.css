@@ -1,4 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+body {
+  background-color: #f3f3f3; }
+
 /* header */
 .wrapper {
   width: 100%; }
@@ -16,7 +19,7 @@
   font-size: 70px;
   margin-top: 10%; }
 
-/* Intro and Outro Page */
+/* Intro Page */
 #intro-text, #outro-text {
   margin-top: 10%;
   animation-name: fade-in;
@@ -59,4 +62,29 @@
   float: none;
   /* inline-block space fix */
   margin-right: 7px;
-  vertical-align: top; }
+  vertical-align: top;
+  text-align: left; }
+
+/* Post Styling */
+.post-card > img {
+  margin-bottom: 2%; }
+
+.post-text {
+  font-family: "Helvetica Neue";
+  font-size: 1.5em;
+  float: left; }
+
+.full-name {
+  color: #2bacca;
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 0px; }
+
+.avatar {
+  margin-right: 1%; }
+
+@media (max-width: 991px) {
+  .img-responsive {
+    margin: 0 auto; }
+  .post-card {
+    margin-bottom: 2%; } }
