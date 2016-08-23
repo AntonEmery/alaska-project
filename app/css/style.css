@@ -11,8 +11,13 @@
 .header img {
   display: inline; }
 
-/* Intro Page */
-#intro-text {
+#loading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 70px;
+  margin-top: 10%; }
+
+/* Intro and Outro Page */
+#intro-text, #outro-text {
   margin-top: 10%;
   animation-name: fade-in;
   animation-duration: 5s;

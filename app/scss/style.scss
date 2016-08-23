@@ -21,9 +21,15 @@ $color: red;
   display: inline;
 }
 
+#loading {
+  font-family: $font;
+  font-size: 70px;
+  margin-top: 10%;
+}
+
 /* Intro Page */
 
-#intro-text {
+#intro-text #outro-text {
   margin-top: 10%;
   animation-name: fade-in;
   animation-duration: 5s;

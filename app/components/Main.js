@@ -40,7 +40,7 @@ var Main = React.createClass({
         <div className="container card-area wrapper">
           <div className="row row-centered">
            {this.state.loading ?
-           	<p>Loading...</p> :
+           	<p id="loading">Loading...</p> :
            	React.cloneElement(this.props.children, { apiData: this.state.posts, status: this.state.loading})}
           </div>
         </div>

@@ -23,18 +23,20 @@ var IndividualPost =  React.createClass({
     console.log(testArray);
     if (testArray[testArray.length - 1] > (this.props.data.length -1)) {
       this.context.router.push({
-        pathname: '/'
+        pathname: 'OutroPage'
       })
     } else {
     this.setState({arrayOfSlides: testArray});
     }
   },
+  // called after initial render
   componentDidMount: function() {
     var that = this;
     setTimeout(function() {
       that.advancePost()
     }, 3000)
   },
+  // called on state change after render
   componentDidUpdate: function() {
     var that = this;
     setTimeout(function() {

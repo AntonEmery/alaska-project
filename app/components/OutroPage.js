@@ -1,29 +1,29 @@
 var React = require('react');
 
 
-var IntroPage = React.createClass({
+var OutroPage = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
-  goToPosts: function() {
+  goHome: function() {
     var that = this;
     setTimeout(function() {
       that.context.router.push({
-        pathname: '/PostsContainer'
+        pathname: '/'
       })
     }, 5000)
   },
   componentDidMount: function() {
-    this.goToPosts();
+    this.goHome();
   },
   render: function() {
     return (
       <div>
-      <p id="intro-text">This is why #iflyalaska</p>
+      <p id="outro-text">Why do you fly Alaska?</p>
       </div>
     );
   }
 
 });
 
-module.exports = IntroPage;
+module.exports = OutroPage;
