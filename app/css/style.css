@@ -1,4 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+body {
+  background-color: #f3f3f3; }
+
 /* header */
 .wrapper {
   width: 100%; }
@@ -79,3 +82,9 @@
 
 .avatar {
   margin-right: 1%; }
+
+@media (max-width: 991px) {
+  .img-responsive {
+    margin: 0 auto; }
+  .post-card {
+    margin-bottom: 2%; } }

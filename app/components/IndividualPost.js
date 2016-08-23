@@ -37,12 +37,12 @@ var IndividualPost =  React.createClass({
     }, 3000)
   },
   //called on state change after render
-  componentDidUpdate: function() {
-    var that = this;
-    setTimeout(function() {
-      that.advancePost()
-    }, 2000)
-  },
+  // componentDidUpdate: function() {
+  //   var that = this;
+  //   setTimeout(function() {
+  //     that.advancePost()
+  //   }, 2000)
+  // },
   doesIconExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
     xhr.open('HEAD', iconUrl, false);
