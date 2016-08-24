@@ -1,8 +1,4 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Link = ReactRouter.Link;
 
 var IndividualPost =  React.createClass({
 
@@ -36,14 +32,15 @@ var IndividualPost =  React.createClass({
       that.advancePost()
     }, 3000)
   },
-  //called on state change after render
+  //called on state change after initial render
   componentDidUpdate: function() {
     var that = this;
     setTimeout(function() {
       that.advancePost()
     }, 2000)
   },
-  doesIconExist: function(iconUrl) {
+  //check to see if user has avatar image
+  doesAvatarExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
     xhr.open('HEAD', iconUrl, false);
     xhr.send();
@@ -54,8 +51,9 @@ var IndividualPost =  React.createClass({
         return true;
     }
   },
-  renderIcon: function(arrayItem) {
-    if (!this.doesIconExist(arrayItem.user.icon)) {
+  //render avatar image
+  renderAvatar: function(arrayItem) {
+    if (!this.doesAvatarExist(arrayItem.user.icon)) {
       return;
     } else {
         return (
@@ -65,6 +63,17 @@ var IndividualPost =  React.createClass({
         )
     }
   },
+  //render appropriate social icon
+  socialIcon: function(arrayItem) {
+    if(arrayItem.source_type == 'instagram') {
+        return <img src="/img/logo-instagram.png" className="social-icon" />
+    } else if(arrayItem.source_type == 'twitter') {
+        return <span className="origin-logo"></span>
+    } else {
+        return <img src="/img/logo-vine.png" className="social-icon" />
+    }
+  },
+  //render image user posted
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
       return;
@@ -74,18 +83,17 @@ var IndividualPost =  React.createClass({
         )
     }
   },
-
   render: function(){
-    console.log('rerendering');
     var that = this;
     console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
         <div className="col-md-3 post-card col-centered">
           {that.renderImage(that.props.data[item])} 
-          {that.renderIcon(that.props.data[item])}
+          {that.renderAvatar(that.props.data[item])}
           <p className="full-name">{that.props.data[item].user.full_name}</p>
           <p className="user-name">{that.props.data[item].user.screen_name}</p>
+          {that.socialIcon(that.props.data[item])}
           <p className="post-text" dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
         </div>
       )

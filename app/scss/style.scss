@@ -9,10 +9,6 @@ body {
 
 /* header */
 
-.wrapper {
-  width: 100%;
-}
-
 .header {
   background-color: #03426a;
   text-align: center;
@@ -36,7 +32,7 @@ body {
   animation-name: fade-in;
   animation-duration: 5s;
   font-family: $font;
-  font-size: 70px;
+  font-size: 4em;
   vertical-align: middle;
 }
 
@@ -47,9 +43,10 @@ body {
 
 /* Posts Page */
 .card-area {
-  padding-top: 3%;
+  width: 100%;
+  padding-top: 1%;
   background-color: #f3f3f3;
-  height: 100vh;
+  margin-bottom: 2%;
 }
 
 .post-card {
@@ -98,6 +95,19 @@ body {
 
 .avatar {
   margin-right: 1%;
+}
+
+.origin-logo {
+  width: 30px;
+  height: 30px;
+  background-image: url('../img/logo-twitter.svg');
+  background-color: #55acee;
+  background-size: contain; 
+  display: block;
+}
+
+.social-icon {
+  display: block;
 }
 
 @media (max-width: 991px) {

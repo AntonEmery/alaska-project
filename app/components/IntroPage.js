@@ -18,7 +18,7 @@ var IntroPage = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className="col-md-12 col-sm-12 col-xs-12">
       <p id="intro-text">This is why #iflyalaska</p>
       </div>
     );
