@@ -3,9 +3,6 @@ body {
   background-color: #f3f3f3; }
 
 /* header */
-.wrapper {
-  width: 100%; }
-
 .header {
   background-color: #03426a;
   text-align: center;
@@ -36,9 +33,10 @@ body {
 
 /* Posts Page */
 .card-area {
-  padding-top: 3%;
+  width: 100%;
+  padding-top: 1%;
   background-color: #f3f3f3;
-  height: 100vh; }
+  margin-bottom: 2%; }
 
 .post-card {
   border-radius: 5px;
@@ -89,6 +87,9 @@ body {
   background-image: url("../img/logo-twitter.svg");
   background-color: #55acee;
   background-size: contain;
+  display: block; }
+
+.social-icon {
   display: block; }
 
 @media (max-width: 991px) {
