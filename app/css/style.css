@@ -83,6 +83,14 @@ body {
 .avatar {
   margin-right: 1%; }
 
+.origin-logo {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/logo-twitter.svg");
+  background-color: #55acee;
+  background-size: contain;
+  display: block; }
+
 @media (max-width: 991px) {
   .img-responsive {
     margin: 0 auto; }

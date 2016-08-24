@@ -65,6 +65,9 @@ var IndividualPost =  React.createClass({
         )
     }
   },
+  socialIcon: function(postType) {
+
+  },
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
       return;
@@ -74,9 +77,7 @@ var IndividualPost =  React.createClass({
         )
     }
   },
-
   render: function(){
-    console.log('rerendering');
     var that = this;
     console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
@@ -86,6 +87,7 @@ var IndividualPost =  React.createClass({
           {that.renderIcon(that.props.data[item])}
           <p className="full-name">{that.props.data[item].user.full_name}</p>
           <p className="user-name">{that.props.data[item].user.screen_name}</p>
+          <span className="origin-logo"></span>
           <p className="post-text" dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
         </div>
       )
