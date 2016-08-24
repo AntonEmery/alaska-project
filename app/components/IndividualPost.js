@@ -62,8 +62,14 @@ var IndividualPost =  React.createClass({
         )
     }
   },
-  socialIcon: function(postType) {
-
+  socialIcon: function(arrayItem) {
+    if(arrayItem.source_type == 'instagram') {
+        return <img src="/img/logo-instagram.png" />
+    } else if(arrayItem.source_type == 'twitter') {
+        return <span className="origin-logo"></span>
+    } else {
+        return <img src="/img/logo-vine.png" />
+    }
   },
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
@@ -84,7 +90,7 @@ var IndividualPost =  React.createClass({
           {that.renderIcon(that.props.data[item])}
           <p className="full-name">{that.props.data[item].user.full_name}</p>
           <p className="user-name">{that.props.data[item].user.screen_name}</p>
-          <span className="origin-logo"></span>
+          {that.socialIcon(that.props.data[item])}
           <p className="post-text" dangerouslySetInnerHTML={{__html: that.props.data[item].text}} key={index}></p>
         </div>
       )
