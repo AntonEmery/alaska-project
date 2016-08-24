@@ -13,12 +13,12 @@ var IntroPage = React.createClass({
       })
     }, 5000)
   },
-  componentDidMount: function() {
-    this.goToPosts();
-  },
+  // componentDidMount: function() {
+  //   this.goToPosts();
+  // },
   render: function() {
     return (
-      <div>
+      <div className="col-md-12 col-sm-12 col-xs-12">
       <p id="intro-text">This is why #iflyalaska</p>
       </div>
     );

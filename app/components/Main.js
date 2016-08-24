@@ -33,7 +33,9 @@ var Main = React.createClass({
       <div>
         <div className="container-fluid header">
           <div className="row">
-            <a href="/"><img src="img/logo.png" className="img-responsive" /></a>
+            <div className="col-md-12 col-sm-12 col-xs-12">
+              <a href="/"><img src="img/logo.png" className="img-responsive" /></a>
+            </div>
           </div>
         </div>
 
