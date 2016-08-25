@@ -6,7 +6,7 @@ Display Instagram and Twitter posts from an API based around the *#*iflyalaska h
 React  
 React-Router  
 Webpack  
-SCSS
+SCSS  
 Gulp
 
 # Usage
