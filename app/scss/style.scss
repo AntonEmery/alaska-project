@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 
-$font: 'Open Sans', sans-serif;
-$color: red;
+$font-stack: 'Open Sans', sans-serif;
 
 body {
   background-color: #f3f3f3;
@@ -20,8 +19,8 @@ body {
 }
 
 #loading {
-  font-family: $font;
-  font-size: 70px;
+  font-family: $font-stack;
+  font-size: 4em;
   margin-top: 10%;
 }
 
@@ -31,7 +30,7 @@ body {
   margin-top: 10%;
   animation-name: fade-in;
   animation-duration: 5s;
-  font-family: $font;
+  font-family: $font-stack;
   font-size: 4em;
   vertical-align: middle;
 }
@@ -109,6 +108,8 @@ body {
 .social-icon {
   display: block;
 }
+
+/* Media Queries */
 
 @media (max-width: 991px) {
   .img-responsive {
