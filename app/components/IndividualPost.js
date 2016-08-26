@@ -16,7 +16,6 @@ var IndividualPost =  React.createClass({
     var newItem = testArray[testArray.length-1];
     testArray.push(newItem + 1);
     testArray.shift();
-    console.log(testArray);
     if (testArray[testArray.length - 1] > (this.props.data.length -1)) {
       this.context.router.push({
         pathname: 'OutroPage'
@@ -32,7 +31,7 @@ var IndividualPost =  React.createClass({
       that.advancePost()
     }, 3000)
   },
-  //called on state change after initial render
+  // //called on state change after initial render
   componentDidUpdate: function() {
     var that = this;
     setTimeout(function() {
@@ -85,7 +84,6 @@ var IndividualPost =  React.createClass({
   },
   render: function(){
     var that = this;
-    console.log(this.props);
     var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
         <div className="col-md-3 post-card col-centered">
