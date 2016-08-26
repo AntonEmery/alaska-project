@@ -13,7 +13,7 @@ body {
 
 #loading {
   font-family: "Open Sans", sans-serif;
-  font-size: 70px;
+  font-size: 4em;
   margin-top: 10%; }
 
 /* Intro Page */
@@ -92,6 +92,7 @@ body {
 .social-icon {
   display: block; }
 
+/* Media Queries */
 @media (max-width: 991px) {
   .img-responsive {
     margin: 0 auto; }

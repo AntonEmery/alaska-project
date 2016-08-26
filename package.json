@@ -1,7 +1,7 @@
 {
   "name": "iFlyAlaska",
   "version": "1.0.0",
-  "description": "app imports twitter and instagram posts with the #iflyalaska tag",
+  "description": "Display twitter, instagram, and Vine posts with the #iflyalaska tag",
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
