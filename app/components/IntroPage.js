@@ -23,7 +23,6 @@ var IntroPage = React.createClass({
       </div>
     );
   }
-
 });
 
 module.exports = IntroPage;

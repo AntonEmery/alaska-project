@@ -4,22 +4,21 @@ var jsonp = require('jsonp');
 
 
 var Main = React.createClass({
-
-	getInitialState: function() {
+  getInitialState: function() {
     return {
       posts: [],
       loading: true
     };
   },
 
-	componentDidMount: function() {
+  componentDidMount: function() {
     var that = this;
     jsonp('https://platform.postano.com/apiproxy/jsonp/accounts/4299/projects/82658/products/13196/posts', null, function (err, data) {
     if (err) {
       console.error(err.message);
-  } else {
-      var dataArray = [];
-      for(i=0; i<data.length; i++) {
+    } else {
+        var dataArray = [];
+        for(i=0; i<data.length; i++) {
         dataArray.push(data[i]);
       }
       that.setState({loading: false, posts: dataArray});

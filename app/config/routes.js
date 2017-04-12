@@ -10,13 +10,13 @@ var OutroPage = require('../components/OutroPage')
 var PostsContainer = require('../containers/PostsContainer');
 
 var routes = (
-	<Router history={hashHistory}>
-		<Route path='/' component={Main}>
-			<IndexRoute component={IntroPage} />
+  <Router history={hashHistory}>
+    <Route path='/' component={Main}>
+      <IndexRoute component={IntroPage} />
       <Route path="PostsContainer" component={PostsContainer} />
       <Route path="OutroPage" component={OutroPage} />
-		</Route>
-	</Router>
+    </Route>
+  </Router>
 )
 
 module.exports = routes;

@@ -31,6 +31,7 @@ var IndividualPost =  React.createClass({
       that.advancePost()
     }, 3000)
   },
+
   // //called on state change after initial render
   componentDidUpdate: function() {
     var that = this;
@@ -38,6 +39,7 @@ var IndividualPost =  React.createClass({
       that.advancePost()
     }, 2000)
   },
+
   //check to see if user has avatar image
   doesAvatarExist: function(iconUrl) {
     var xhr = new XMLHttpRequest();
@@ -45,11 +47,12 @@ var IndividualPost =  React.createClass({
     xhr.send();
 
     if(xhr.status == '404') {
-      return false; 
+      return false;
     } else {
         return true;
     }
   },
+
   //render avatar image
   renderAvatar: function(arrayItem) {
     if (!this.doesAvatarExist(arrayItem.user.icon)) {
@@ -62,6 +65,7 @@ var IndividualPost =  React.createClass({
         )
     }
   },
+
   //render appropriate social icon
   socialIcon: function(arrayItem) {
     if(arrayItem.source_type == 'instagram') {
@@ -72,6 +76,7 @@ var IndividualPost =  React.createClass({
         return <img src="/img/logo-vine.png" className="social-icon" />
     }
   },
+
   //render image user posted
   renderImage: function(arrayItem) {
     if (!arrayItem.images.length) {
@@ -82,12 +87,13 @@ var IndividualPost =  React.createClass({
         )
     }
   },
+  
   render: function(){
     var that = this;
     var testData = this.state.arrayOfSlides.map(function(item, index) {
       return (
         <div className="col-md-3 post-card col-centered">
-          {that.renderImage(that.props.data[item])} 
+          {that.renderImage(that.props.data[item])}
           {that.renderAvatar(that.props.data[item])}
           <p className="full-name">{that.props.data[item].user.full_name}</p>
           <p className="user-name">{that.props.data[item].user.screen_name}</p>
@@ -96,11 +102,10 @@ var IndividualPost =  React.createClass({
         </div>
       )
     });
-    return  <div> 
+    return  <div>
           <div>{testData}</div>
           </div>
   }
 });
 
 module.exports = IndividualPost;
-
